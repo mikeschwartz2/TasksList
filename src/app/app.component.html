@@ -86,7 +86,7 @@
 <div class="content" role="main">
 
   <div class="list-container">
-    <h2>TODO List</h2>
+    <h2>TODO Task List</h2>
     <h4>A place to store your TODO's</h4>
 
 
@@ -138,8 +138,8 @@
     </div>
     
     <label>Add Task</label><br />
-    <input type="text" [(ngModel)]="newTask" /><br />
-    <button (click)="addTask(newTask)">Add Task</button>
+    <input type="text" [(ngModel)]="newTask" id="add-input"/><br />
+    <button (click)="addTask(newTask)" id="add-task">Add Task</button>
     
 
   </div>

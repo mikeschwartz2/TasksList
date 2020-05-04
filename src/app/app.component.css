@@ -36,5 +36,53 @@ button:hover {
 .edit {
     float: right;
 }
-
-
+.task-container .complete-container button {
+    background: none;
+    border: solid 2px;
+    border-color: #ff69b4;
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: #ff69b4;
+    font-weight: bold;
+}
+.task-container .complete-container button:hover {
+    background-color: #ff69b4;
+    color: #fff;
+} 
+.task-container .delete button {
+    border: none !important;
+    font-weight: bold;
+    font-size: 19px;
+}
+.task-container .delete button:hover {
+    color: rgb(255, 0, 0);
+}
+.task-container .edit button {
+    border-color: #2f63c1 !important;
+    padding: 5px 10px;
+    margin-right: 7px;
+    border-radius: 5px;
+    border-width: 3px;
+    background: none;
+    background-color: #d1d2ff;
+}
+.task-container .edit button:hover {
+    background-color: #2f63c1;
+    border-color: #000;
+}
+button#add-task {
+    width: 100%;
+    background: #ff1493;
+    border-radius: 4px;
+    padding: 8px 4px;
+    margin-top: 10px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #fff;
+}
+button#add-task:hover {
+    background: #ff72bd;
+}
+input#add-input {
+    width: 100%;
+}
