@@ -1,0 +1,147 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+</style>
+
+
+
+<div class="content" role="main">
+
+  <div class="list-container">
+    <h2>TODO List</h2>
+    <h4>A place to store your TODO's</h4>
+
+
+    
+
+
+    <div *ngIf="!hasTask">
+      <h2>Congratulations! You have no tasks remaining!</h2>
+    </div>
+
+
+    <label>Filter</label><br />
+    <input type="text" [(ngModel)]="searchTasks" /><br />
+
+    <div *ngFor="let task of tasks; index as i; filter: " class="task-list">
+      <div *ngIf="task.taskName.includes(searchTasks)" class="filter">
+      <div class="task-container">
+        <div class="complete-container">
+
+          
+
+          <div *ngIf="!task.completed">
+            <button (click)="updateComplete(i)" id="todo{{ i }}" class="complete todo-btn">TODO</button>
+          </div>
+          <div *ngIf="task.completed">
+            <button (click)="updateComplete(i)" id="done{{ i }}"class="complete done-btn">DONE</button>
+          </div>
+        </div>
+
+        
+        <div class="taskName">{{i}}: {{ task.taskName }}</div>
+
+        
+        
+        <div class="delete">
+          <button (click)="deleteTask(i)">X</button>
+        </div>
+
+        <div class="edit">
+          <button (click)="displayEdit(i)">Edit</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="showEdit" class="edit-popup">
+        <input type="text" [(ngModel)]="editedTask" /><br />
+        <button (click)="editTask(editId, editedTask)">Update Task</button>
+    </div>
+    
+    <label>Add Task</label><br />
+    <input type="text" [(ngModel)]="newTask" /><br />
+    <button (click)="addTask(newTask)">Add Task</button>
+    
+
+  </div>
+
+</div>

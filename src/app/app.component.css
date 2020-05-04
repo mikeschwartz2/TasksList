@@ -1,0 +1,40 @@
+.list-container {
+    width: 100%;
+}
+.task-container {
+    width: 100%;
+}
+.task-container div {
+    display: inline-block;
+}
+.delete {
+    float: right;
+    font-weight: bold;
+    padding: 0px 2px;
+}
+.list-container {
+    background: #eee;
+    padding: 20px 20px;
+    border-radius: 15px;
+}
+.taskName {
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.task-container {
+    border: solid 1px;
+    padding: 6px;
+    margin: 8px 0px;
+}
+.hide-btn {
+    display: none !important;
+}
+button:hover {
+    cursor: pointer;
+}
+.edit {
+    float: right;
+}
+
+
